@@ -1,0 +1,23 @@
+.draggable_container {
+  position: relative;
+  width: 300px;
+  border: 1px solid #ccc;
+  .toolbar {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    width: 300px;
+    border: 1px solid #ccc;
+    padding: 0 12px;
+    box-sizing: border-box;
+    height: 30px;
+  }
+}
+
+.handle {
+  height: 30px; /* 调整高度 */
+  background-color: #f0f0f0;
+  cursor:ns-resize;
+  text-align: center;
+  line-height: 30px; /* 垂直居中 */
+}

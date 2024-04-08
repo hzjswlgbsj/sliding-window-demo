@@ -10,7 +10,7 @@ const DraggableList: React.FC = () => {
 
   const handleDrag = (event: DraggableEvent, data: DraggableData) => {
     event.preventDefault(); // 阻止默认行为，防止列表滚动
-    setHeight(data.y - 60); // 根据拖拽位置更新列表高度
+    setHeight(data.y - 66); // 根据拖拽位置更新列表高度
   };
 
   const toggleCollapse = () => {
@@ -25,12 +25,19 @@ const DraggableList: React.FC = () => {
     index: number;
     style: React.CSSProperties;
   }) => (
-    <div style={{ padding: "0 12px", ...style }}>List Item {index + 1}</div>
+    <div
+      style={{
+        padding: "0 12px",
+        boxSizing: "border-box",
+        ...style,
+      }}
+    >
+      List Item {index + 1}
+    </div>
   );
 
   return (
     <Draggable handle="#draggable_container" cancel="#resize_drag">
-      {/* 使用 react-draggable 组件包裹整个组件，并指定 handle 属性为 .handle，表示只能通过 .handle 元素来拖动 */}
       <div className={styles.draggable_container} id="draggable_container">
         <div className={styles.toolbar}>
           <div className={styles.icon}>I</div>
